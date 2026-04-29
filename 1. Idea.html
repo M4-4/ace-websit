@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>zeninth Gaming</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+
+body {
+  background:#0b0b12;
+  color:white;
+  overflow-x:hidden;
+}
+
+header {
+  display:flex;
+  justify-content:space-between;
+  padding:25px 60px;
+  position:fixed;
+  width:100%;
+  background:rgba(10,10,20,0.7);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+header h1 {color:#b084ff;}
+
+nav a {
+  margin-left:25px;
+  text-decoration:none;
+  color:#aaa;
+  transition:.3s;
+}
+
+nav a:hover {color:#b084ff;}
+
+.hero {
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:radial-gradient(circle at 50% 30%, #1a1033, #05050a);
+}
+
+.hero h2 {
+  font-size:60px;
+}
+
+.hero span {color:#b084ff;}
+
+.btn {
+  margin-top:20px;
+  padding:14px 30px;
+  border-radius:30px;
+  border:none;
+  background:linear-gradient(45deg,#9333ea,#b084ff);
+  color:white;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.btn:hover {
+  transform:scale(1.05);
+  box-shadow:0 0 25px rgba(176,132,255,0.6);
+}
+
+section {
+  padding:100px 60px;
+}
+
+.title {
+  text-align:center;
+  font-size:36px;
+  margin-bottom:60px;
+  color:#b084ff;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card {
+  background:#111120;
+  padding:30px;
+  border-radius:20px;
+  transition:.4s;
+  position:relative;
+  overflow:hidden;
+}
+
+.card::before {
+  content:"";
+  position:absolute;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle,#b084ff33,transparent);
+  top:-50%;left:-50%;
+  opacity:0;
+  transition:.4s;
+}
+
+.card:hover::before {opacity:1;}
+
+.card:hover {
+  transform:translateY(-10px);
+  box-shadow:0 0 30px rgba(176,132,255,0.3);
+}
+
+.shop-item {
+  text-align:center;
+}
+
+.shop-item img {
+  width:100%;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+
+.price {color:#b084ff;margin:10px 0;}
+
+footer {
+  text-align:center;
+  padding:40px;
+  color:#777;
+  background:#05050a;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>zeninth</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#products">Products</a>
+    <a href="#shop">Shop</a>
+    <a href="#services">Services</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h2>Build Your <span>Ultimate Gaming</span> Machine</h2>
+    <p>Custom PCs. Powerful Laptops. Maximum Performance.</p>
+    <button class="btn">Start Building</button>
+  </div>
+</section>
+
+<section id="products">
+  <h2 class="title">Products</h2>
+  <div class="grid">
+    <div class="card"><h3>Custom Gaming PCs</h3><p>Tailored to your performance needs.</p></div>
+    <div class="card"><h3>Gaming Laptops</h3><p>Portable power without compromise.</p></div>
+    <div class="card"><h3>Creator Workstations</h3><p>Built for creators and professionals.</p></div>
+  </div>
+</section>
+
+<section id="shop">
+  <h2 class="title">Shop</h2>
+  <div class="grid">
+
+    <div class="card shop-item">
+      <img src="https://via.placeholder.com/300x200">
+      <h3>RTX Beast PC</h3>
+      <p class="price">€2,499</p>
+      <button class="btn">Buy Now</button>
+    </div>
+
+    <div class="card shop-item">
+      <img src="https://via.placeholder.com/300x200">
+      <h3>Pro Gaming Laptop</h3>
+      <p class="price">€1,899</p>
+      <button class="btn">Buy Now</button>
+    </div>
+
+    <div class="card shop-item">
+      <img src="https://via.placeholder.com/300x200">
+      <h3>Streamer Setup</h3>
+      <p class="price">€3,199</p>
+      <button class="btn">Buy Now</button>
+    </div>
+
+  </div>
+</section>
+
+<section id="services">
+  <h2 class="title">Services</h2>
+  <div class="grid">
+    <div class="card"><h3>Upgrades</h3><p>Boost your system anytime.</p></div>
+    <div class="card"><h3>Maintenance</h3><p>Keep your PC at peak performance.</p></div>
+    <div class="card"><h3>Support</h3><p>Expert help when you need it.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 zeninth Gaming</p>
+</footer>
+
+</body>
+</html>
