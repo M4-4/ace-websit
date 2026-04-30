@@ -1,2 +1,2 @@
 # ACE - M-44 Website
-Friends Patnershp
+Friends Patnership
