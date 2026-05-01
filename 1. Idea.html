@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>zeninth Gaming - Ultimate Gaming Machines</title>
+<title>ZENINTH Gaming - Ultimate Gaming Machines</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -14,7 +14,7 @@
 html {scroll-behavior:smooth;}
 
 body {
-  background:#0b0b12;
+  background:#0a0a14;
   color:white;
   overflow-x:hidden;
   line-height:1.6;
@@ -29,18 +29,20 @@ header {
   position:fixed;
   width:100%;
   background:rgba(10,10,20,0.85);
-  backdrop-filter:blur(15px);
+  backdrop-filter:blur(20px);
   z-index:1000;
-  box-shadow:0 8px 32px rgba(176,132,255,0.1);
+  box-shadow:0 8px 32px rgba(138,43,226,0.2);
   transition:.4s;
+  border-bottom:1px solid rgba(138,43,226,0.1);
 }
 
 header h1 {
-  color:#b084ff;
+  color:#8a2be2;
   font-size:28px;
   font-weight:800;
-  letter-spacing:2px;
-  text-shadow:0 0 20px rgba(176,132,255,0.5);
+  letter-spacing:3px;
+  text-shadow:0 0 30px rgba(138,43,226,0.8), 0 0 60px rgba(75,0,130,0.4);
+  font-family:'Space Mono',monospace;
 }
 
 nav {display:flex;gap:40px;}
@@ -51,6 +53,8 @@ nav a {
   transition:.3s;
   font-weight:500;
   position:relative;
+  font-size:14px;
+  letter-spacing:1px;
 }
 
 nav a::after {
@@ -60,11 +64,11 @@ nav a::after {
   left:0;
   width:0;
   height:2px;
-  background:#b084ff;
+  background:linear-gradient(90deg, #8a2be2, #da70d6);
   transition:.3s;
 }
 
-nav a:hover {color:#b084ff;}
+nav a:hover {color:#da70d6;text-shadow:0 0 10px rgba(138,43,226,0.6);}
 nav a:hover::after {width:100%;}
 
 /* HERO SECTION */
@@ -74,7 +78,7 @@ nav a:hover::after {width:100%;}
   align-items:center;
   justify-content:center;
   text-align:center;
-  background:linear-gradient(135deg, #1a0033 0%, #0b0b12 50%, #1a0033 100%);
+  background:linear-gradient(135deg, #1a0033 0%, #0a0a14 50%, #2d0052 100%);
   position:relative;
   overflow:hidden;
   margin-top:60px;
@@ -83,30 +87,37 @@ nav a:hover::after {width:100%;}
 .hero::before {
   content:"";
   position:absolute;
-  width:400px;
-  height:400px;
-  background:radial-gradient(circle, rgba(176,132,255,0.2), transparent);
+  width:500px;
+  height:500px;
+  background:radial-gradient(circle, rgba(138,43,226,0.3), transparent);
   border-radius:50%;
   animation:float 8s ease-in-out infinite;
   top:20%;
   left:10%;
+  filter:blur(40px);
 }
 
 .hero::after {
   content:"";
   position:absolute;
-  width:300px;
-  height:300px;
-  background:radial-gradient(circle, rgba(147,51,234,0.15), transparent);
+  width:400px;
+  height:400px;
+  background:radial-gradient(circle, rgba(75,0,130,0.25), transparent);
   border-radius:50%;
   animation:float 10s ease-in-out infinite reverse;
   bottom:10%;
   right:10%;
+  filter:blur(40px);
 }
 
 @keyframes float {
   0%, 100% {transform:translateY(0px);}
   50% {transform:translateY(50px);}
+}
+
+@keyframes scanlines {
+  0% {transform:translateY(0);}
+  100% {transform:translateY(10px);}
 }
 
 .hero > div {
@@ -125,26 +136,30 @@ nav a:hover::after {width:100%;}
   font-weight:800;
   margin-bottom:20px;
   line-height:1.2;
-  background:linear-gradient(135deg, #b084ff, #e9b3ff);
+  background:linear-gradient(135deg, #8a2be2, #da70d6);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
   background-clip:text;
+  font-family:'Space Mono',monospace;
+  letter-spacing:2px;
+  text-shadow:0 0 40px rgba(138,43,226,0.4);
 }
 
 .hero p {
   font-size:20px;
-  color:#aaa;
+  color:#bbb;
   margin-bottom:40px;
+  letter-spacing:1px;
 }
 
-.hero span {color:#b084ff;}
+.hero span {color:#da70d6;text-shadow:0 0 20px rgba(218,112,214,0.6);}
 
 /* BUTTONS */
 .btn {
   padding:16px 40px;
   border-radius:50px;
   border:2px solid transparent;
-  background:linear-gradient(45deg, #9333ea, #b084ff);
+  background:linear-gradient(45deg, #8a2be2, #da70d6);
   color:white;
   cursor:pointer;
   transition:.4s;
@@ -152,9 +167,10 @@ nav a:hover::after {width:100%;}
   font-size:16px;
   text-transform:uppercase;
   letter-spacing:1px;
-  box-shadow:0 0 20px rgba(176,132,255,0.3);
+  box-shadow:0 0 30px rgba(138,43,226,0.5);
   position:relative;
   overflow:hidden;
+  font-family:'Space Mono',monospace;
 }
 
 .btn::before {
@@ -164,28 +180,31 @@ nav a:hover::after {width:100%;}
   left:-100%;
   width:100%;
   height:100%;
-  background:linear-gradient(45deg, #b084ff, #e9b3ff);
+  background:linear-gradient(45deg, #da70d6, #ff1493);
   transition:.4s;
   z-index:-1;
 }
 
 .btn:hover {
   transform:translateY(-3px);
-  box-shadow:0 10px 40px rgba(176,132,255,0.6);
-  border-color:#b084ff;
+  box-shadow:0 10px 50px rgba(138,43,226,0.8);
+  border-color:#da70d6;
+  text-shadow:0 0 20px rgba(138,43,226,0.6);
 }
 
 .btn:hover::before {left:0;}
 
 .btn-outline {
   background:transparent;
-  border:2px solid #b084ff;
-  color:#b084ff;
+  border:2px solid #8a2be2;
+  color:#da70d6;
   margin-left:20px;
+  box-shadow:0 0 20px rgba(138,43,226,0.3);
 }
 
 .btn-outline:hover {
-  background:rgba(176,132,255,0.2);
+  background:rgba(138,43,226,0.2);
+  box-shadow:0 0 40px rgba(138,43,226,0.6);
 }
 
 /* SECTIONS */
@@ -199,21 +218,24 @@ section {
   font-size:48px;
   font-weight:800;
   margin-bottom:80px;
-  background:linear-gradient(135deg, #b084ff, #e9b3ff);
+  background:linear-gradient(135deg, #8a2be2, #da70d6);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
   background-clip:text;
   position:relative;
+  font-family:'Space Mono',monospace;
+  letter-spacing:2px;
 }
 
 .title::after {
   content:"";
   display:block;
-  width:80px;
-  height:4px;
-  background:linear-gradient(90deg, #b084ff, #e9b3ff);
+  width:100px;
+  height:3px;
+  background:linear-gradient(90deg, #8a2be2, #da70d6);
   margin:20px auto 0;
   border-radius:2px;
+  box-shadow:0 0 20px rgba(138,43,226,0.6);
 }
 
 .grid {
@@ -225,14 +247,15 @@ section {
 
 /* CARDS */
 .card {
-  background:linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background:linear-gradient(135deg, rgba(26,26,46,0.8) 0%, rgba(22,33,62,0.8) 100%);
   padding:40px;
   border-radius:20px;
   transition:.5s;
   position:relative;
   overflow:hidden;
-  border:1px solid rgba(176,132,255,0.1);
+  border:1px solid rgba(138,43,226,0.2);
   cursor:pointer;
+  backdrop-filter:blur(10px);
 }
 
 .card::before {
@@ -240,7 +263,7 @@ section {
   position:absolute;
   width:300%;
   height:300%;
-  background:radial-gradient(circle at 30% 30%, rgba(176,132,255,0.3), transparent);
+  background:radial-gradient(circle at 30% 30%, rgba(138,43,226,0.4), transparent);
   top:-100%;
   left:-100%;
   opacity:0;
@@ -255,16 +278,19 @@ section {
 
 .card:hover {
   transform:translateY(-15px) rotateX(5deg);
-  box-shadow:0 20px 60px rgba(176,132,255,0.4);
-  border-color:rgba(176,132,255,0.3);
+  box-shadow:0 20px 60px rgba(138,43,226,0.5);
+  border-color:rgba(138,43,226,0.5);
+  background:linear-gradient(135deg, rgba(26,26,46,0.95) 0%, rgba(22,33,62,0.95) 100%);
 }
 
 .card h3 {
   font-size:22px;
   margin-bottom:15px;
-  color:#e9b3ff;
+  color:#da70d6;
   position:relative;
   z-index:2;
+  font-family:'Space Mono',monospace;
+  letter-spacing:1px;
 }
 
 .card p {
@@ -276,11 +302,12 @@ section {
 
 .card i {
   font-size:40px;
-  color:#b084ff;
+  color:#8a2be2;
   margin-bottom:20px;
   display:block;
   position:relative;
   z-index:2;
+  text-shadow:0 0 20px rgba(138,43,226,0.6);
 }
 
 /* SHOP ITEMS */
@@ -295,22 +322,24 @@ section {
   margin-bottom:20px;
   object-fit:cover;
   transition:.4s;
-  border:2px solid rgba(176,132,255,0.2);
+  border:2px solid rgba(138,43,226,0.3);
 }
 
 .shop-item:hover img {
   transform:scale(1.05);
-  border-color:#b084ff;
-  box-shadow:0 0 30px rgba(176,132,255,0.3);
+  border-color:#da70d6;
+  box-shadow:0 0 30px rgba(138,43,226,0.5);
 }
 
 .price {
-  color:#b084ff;
+  color:#da70d6;
   font-size:28px;
   font-weight:700;
   margin:15px 0 25px;
   position:relative;
   z-index:2;
+  font-family:'Space Mono',monospace;
+  text-shadow:0 0 15px rgba(138,43,226,0.4);
 }
 
 .specs {
@@ -319,11 +348,14 @@ section {
   margin:10px 0;
   position:relative;
   z-index:2;
+  font-family:'Space Mono',monospace;
 }
 
 /* FEATURES SECTION */
 #features {
-  background:linear-gradient(135deg, rgba(147,51,234,0.1) 0%, rgba(176,132,255,0.05) 100%);
+  background:linear-gradient(135deg, rgba(138,43,226,0.1) 0%, rgba(75,0,130,0.05) 100%);
+  border-top:1px solid rgba(138,43,226,0.1);
+  border-bottom:1px solid rgba(138,43,226,0.1);
 }
 
 .features-grid {
@@ -335,31 +367,39 @@ section {
 .feature-card {
   text-align:center;
   padding:30px;
-  background:rgba(176,132,255,0.05);
+  background:rgba(138,43,226,0.08);
   border-radius:15px;
-  border:1px solid rgba(176,132,255,0.1);
+  border:1px solid rgba(138,43,226,0.15);
   transition:.4s;
+  backdrop-filter:blur(10px);
+  box-shadow:0 8px 32px rgba(138,43,226,0.05);
 }
 
 .feature-card:hover {
-  background:rgba(176,132,255,0.15);
+  background:rgba(138,43,226,0.2);
   transform:scale(1.05);
+  box-shadow:0 15px 50px rgba(138,43,226,0.2);
+  border-color:rgba(138,43,226,0.3);
 }
 
 .feature-card i {
   font-size:48px;
-  color:#b084ff;
+  color:#da70d6;
   margin-bottom:15px;
+  text-shadow:0 0 20px rgba(138,43,226,0.4);
 }
 
 .feature-card h4 {
-  color:#e9b3ff;
+  color:#da70d6;
   margin-bottom:10px;
+  font-family:'Space Mono',monospace;
+  letter-spacing:1px;
 }
 
 /* TESTIMONIALS */
 #testimonials {
-  background:linear-gradient(135deg, #1a0033 0%, #0b0b12 100%);
+  background:linear-gradient(135deg, #1a0033 0%, #0a0a14 100%);
+  border-top:1px solid rgba(138,43,226,0.1);
 }
 
 .testimonial-grid {
@@ -369,17 +409,25 @@ section {
 }
 
 .testimonial {
-  background:rgba(176,132,255,0.08);
+  background:rgba(138,43,226,0.12);
   padding:40px;
   border-radius:15px;
-  border-left:4px solid #b084ff;
+  border-left:4px solid #8a2be2;
   position:relative;
+  backdrop-filter:blur(10px);
+  box-shadow:0 8px 32px rgba(138,43,226,0.1);
+  transition:.4s;
+}
+
+.testimonial:hover {
+  border-left-color:#da70d6;
+  box-shadow:0 15px 50px rgba(138,43,226,0.2);
 }
 
 .testimonial p {
   margin-bottom:20px;
   font-style:italic;
-  color:#ccc;
+  color:#ddd;
 }
 
 .author {
@@ -392,28 +440,33 @@ section {
   width:50px;
   height:50px;
   border-radius:50%;
-  background:linear-gradient(135deg, #b084ff, #9333ea);
+  background:linear-gradient(135deg, #8a2be2, #da70d6);
   display:flex;
   align-items:center;
   justify-content:center;
   font-weight:700;
+  font-family:'Space Mono',monospace;
+  box-shadow:0 0 20px rgba(138,43,226,0.5);
 }
 
-.author-info h4 {color:#b084ff;margin-bottom:5px;}
-.author-info p {color:#666;font-size:12px;}
+.author-info h4 {color:#da70d6;margin-bottom:5px;font-family:'Space Mono',monospace;letter-spacing:1px;}
+.author-info p {color:#888;font-size:12px;}
 
 /* FOOTER */
 footer {
   text-align:center;
   padding:60px 40px;
   color:#666;
-  background:#05050a;
-  border-top:1px solid rgba(176,132,255,0.1);
+  background:linear-gradient(180deg, #05050a 0%, #0a0a14 100%);
+  border-top:1px solid rgba(138,43,226,0.15);
 }
 
 footer h3 {
-  color:#b084ff;
+  color:#da70d6;
   margin-bottom:20px;
+  font-family:'Space Mono',monospace;
+  letter-spacing:2px;
+  text-shadow:0 0 20px rgba(138,43,226,0.5);
 }
 
 .footer-links {
@@ -427,9 +480,10 @@ footer h3 {
   color:#aaa;
   text-decoration:none;
   transition:.3s;
+  letter-spacing:1px;
 }
 
-.footer-links a:hover {color:#b084ff;}
+.footer-links a:hover {color:#da70d6;text-shadow:0 0 10px rgba(138,43,226,0.6);}
 
 .social {
   display:flex;
@@ -442,19 +496,21 @@ footer h3 {
   width:50px;
   height:50px;
   border-radius:50%;
-  background:rgba(176,132,255,0.1);
+  background:rgba(138,43,226,0.15);
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#b084ff;
+  color:#da70d6;
   transition:.3s;
-  border:1px solid rgba(176,132,255,0.2);
+  border:1px solid rgba(138,43,226,0.3);
+  box-shadow:0 0 15px rgba(138,43,226,0.2);
 }
 
 .social a:hover {
-  background:#b084ff;
+  background:linear-gradient(135deg, #8a2be2, #da70d6);
   color:white;
   transform:translateY(-5px);
+  box-shadow:0 10px 40px rgba(138,43,226,0.6);
 }
 
 /* RESPONSIVE */
@@ -464,6 +520,7 @@ footer h3 {
   .hero h2 {font-size:42px;}
   section {padding:80px 30px;}
   .title {font-size:32px;}
+  header h1 {font-size:24px;}
 }
 
 </style>
@@ -473,59 +530,59 @@ footer h3 {
 
 <!-- HEADER -->
 <header>
-  <h1>⚡ zenith</h1>
+  <h1>⚡ ZENINTH</h1>
   <nav>
-    <a href="#home">Home</a>
-    <a href="#features">Features</a>
-    <a href="#products">Products</a>
-    <a href="#shop">Shop</a>
-    <a href="#services">Services</a>
-    <a href="#testimonials">Reviews</a>
+    <a href="#home">HOME</a>
+    <a href="#features">FEATURES</a>
+    <a href="#products">PRODUCTS</a>
+    <a href="#shop">SHOP</a>
+    <a href="#services">SERVICES</a>
+    <a href="#testimonials">REVIEWS</a>
   </nav>
 </header>
 
 <!-- HERO SECTION -->
 <section class="hero" id="home">
   <div>
-    <h2>Build Your <span>Ultimate Gaming</span> Machine</h2>
+    <h2>Build Your <span>ULTIMATE GAMING</span> MACHINE</h2>
     <p>Crafted for champions. Engineered for performance. Ready for victory.</p>
-    <button class="btn">⚙️ Start Building</button>
-    <button class="btn btn-outline">📱 View Catalog</button>
+    <button class="btn">⚙️ START BUILDING</button>
+    <button class="btn btn-outline">📱 VIEW CATALOG</button>
   </div>
 </section>
 
 <!-- FEATURES SECTION -->
 <section id="features">
-  <h2 class="title">Why Choose zenith?</h2>
+  <h2 class="title">Why Choose ZENINTH?</h2>
   <div class="features-grid">
     <div class="feature-card">
       <i class="fas fa-bolt"></i>
-      <h4>Lightning Fast</h4>
+      <h4>LIGHTNING FAST</h4>
       <p>RTX 40-series with peak performance</p>
     </div>
     <div class="feature-card">
       <i class="fas fa-wind"></i>
-      <h4>Advanced Cooling</h4>
+      <h4>ADVANCED COOLING</h4>
       <p>Liquid cooling keeps temps optimal</p>
     </div>
     <div class="feature-card">
       <i class="fas fa-gamepad"></i>
-      <h4>Gaming Ready</h4>
+      <h4>GAMING READY</h4>
       <p>240+ FPS on ultra settings</p>
     </div>
     <div class="feature-card">
       <i class="fas fa-cog"></i>
-      <h4>Customizable</h4>
+      <h4>CUSTOMIZABLE</h4>
       <p>Build exactly what you need</p>
     </div>
     <div class="feature-card">
       <i class="fas fa-shield-alt"></i>
-      <h4>Warranty</h4>
+      <h4>WARRANTY</h4>
       <p>5-year protection included</p>
     </div>
     <div class="feature-card">
       <i class="fas fa-headset"></i>
-      <h4>24/7 Support</h4>
+      <h4>24/7 SUPPORT</h4>
       <p>Expert help anytime, anywhere</p>
     </div>
   </div>
@@ -537,17 +594,17 @@ footer h3 {
   <div class="grid">
     <div class="card">
       <i class="fas fa-desktop"></i>
-      <h3>🎮 Custom Gaming PCs</h3>
+      <h3>🎮 CUSTOM GAMING PCs</h3>
       <p>Tailored to your exact performance needs. From casual gaming to esports competitive edge.</p>
     </div>
     <div class="card">
       <i class="fas fa-laptop"></i>
-      <h3>💻 Gaming Laptops</h3>
+      <h3>💻 GAMING LAPTOPS</h3>
       <p>Portable powerhouses with premium cooling. Take your gaming anywhere without compromise.</p>
     </div>
     <div class="card">
       <i class="fas fa-atom"></i>
-      <h3>🎬 Creator Workstations</h3>
+      <h3>🎬 CREATOR WORKSTATIONS</h3>
       <p>Built for creators and professionals. Video editing, 3D rendering, and content creation.</p>
     </div>
   </div>
@@ -560,26 +617,26 @@ footer h3 {
 
     <div class="card shop-item">
       <img src="https://images.unsplash.com/photo-1587829191301-54e4b97046cc?w=400&h=250&fit=crop" alt="RTX Beast PC">
-      <h3>⚡ RTX Beast PC</h3>
+      <h3>⚡ RTX BEAST PC</h3>
       <p class="specs">RTX 4090 • i9-13900K • 64GB RAM • 2TB SSD</p>
       <p class="price">€2,499</p>
-      <button class="btn">Buy Now</button>
+      <button class="btn">BUY NOW</button>
     </div>
 
     <div class="card shop-item">
       <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Pro Gaming Laptop">
-      <h3>💻 Pro Gaming Laptop</h3>
+      <h3>💻 PRO GAMING LAPTOP</h3>
       <p class="specs">RTX 4080 • i9-13900HX • 32GB RAM • 1TB SSD</p>
       <p class="price">€1,899</p>
-      <button class="btn">Buy Now</button>
+      <button class="btn">BUY NOW</button>
     </div>
 
     <div class="card shop-item">
       <img src="https://images.unsplash.com/photo-1622663762034-3e1c1c09c1b0?w=400&h=250&fit=crop" alt="Streamer Setup">
-      <h3>🎙️ Streamer Setup</h3>
+      <h3>🎙️ STREAMER SETUP</h3>
       <p class="specs">RTX 4070 Ti • i9-13900 • 48GB RAM • SSD</p>
       <p class="price">€3,199</p>
-      <button class="btn">Buy Now</button>
+      <button class="btn">BUY NOW</button>
     </div>
 
   </div>
@@ -591,17 +648,17 @@ footer h3 {
   <div class="grid">
     <div class="card">
       <i class="fas fa-arrow-up"></i>
-      <h3>🚀 Upgrades</h3>
+      <h3>🚀 UPGRADES</h3>
       <p>Boost your system anytime. We handle everything from RAM upgrades to GPU replacements.</p>
     </div>
     <div class="card">
       <i class="fas fa-tools"></i>
-      <h3>🔧 Maintenance</h3>
+      <h3>🔧 MAINTENANCE</h3>
       <p>Keep your PC at peak performance. Cleaning, optimization, and regular checkups.</p>
     </div>
     <div class="card">
       <i class="fas fa-headset"></i>
-      <h3>💬 Support</h3>
+      <h3>💬 SUPPORT</h3>
       <p>Expert help when you need it. Fast response times and guaranteed solutions.</p>
     </div>
   </div>
@@ -646,12 +703,12 @@ footer h3 {
 
 <!-- FOOTER -->
 <footer>
-  <h3>⚡ zenith Gaming</h3>
+  <h3>⚡ ZENINTH GAMING</h3>
   <div class="footer-links">
-    <a href="#">About Us</a>
-    <a href="#">Contact</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms of Service</a>
+    <a href="#">ABOUT US</a>
+    <a href="#">CONTACT</a>
+    <a href="#">PRIVACY POLICY</a>
+    <a href="#">TERMS OF SERVICE</a>
   </div>
   <div class="social">
     <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
@@ -659,7 +716,7 @@ footer h3 {
     <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
     <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
   </div>
-  <p>© 2026 zenith Gaming. All rights reserved. Built with ⚡ for gamers.</p>
+  <p>© 2026 ZENINTH Gaming. All rights reserved. Built with ⚡ for gamers.</p>
 </footer>
 
 </body>
