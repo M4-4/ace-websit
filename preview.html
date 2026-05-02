@@ -156,6 +156,10 @@ nav a:hover::after {width:100%;}
 
 /* BUTTONS */
 .btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
   padding:16px 40px;
   border-radius:50px;
   border:2px solid transparent;
@@ -337,7 +341,81 @@ section {
   font-weight:700;
   margin:15px 0 25px;
   position:relative;
-  z-index:2;
+  z-index:2;}
+
+.configurator-grid {
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:30px;
+  align-items:start;
+}
+
+.config-panel,
+.stats-panel {
+  background:linear-gradient(135deg, rgba(26,26,46,0.95) 0%, rgba(22,33,62,0.95) 100%);
+  border:1px solid rgba(138,43,226,0.2);
+  padding:35px;
+  border-radius:24px;
+}
+
+.config-panel h3,
+.stats-panel h3 {
+  font-size:24px;
+  margin-bottom:20px;
+  color:#da70d6;
+  font-family:'Space Mono',monospace;
+}
+
+.config-field {
+  margin-bottom:20px;
+}
+
+.config-field label {
+  display:block;
+  margin-bottom:10px;
+  color:#bbb;
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+.config-field select {
+  width:100%;
+  padding:16px 18px;
+  border-radius:16px;
+  border:1px solid rgba(138,43,226,0.25);
+  background:rgba(10,10,20,0.9);
+  color:white;
+  font-size:15px;
+  outline:none;
+  box-shadow:inset 0 0 15px rgba(0,0,0,0.35);
+}
+
+.stat-item {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 20px;
+  background:rgba(10,10,20,0.7);
+  border-radius:16px;
+  margin-bottom:14px;
+}
+
+.stat-item span {
+  color:#aaa;
+  font-size:14px;
+}
+
+.stat-item strong {
+  color:#fff;
+  font-size:15px;
+  letter-spacing:0.5px;
+}
+
+@media(max-width:980px) {
+  .configurator-grid {
+    grid-template-columns:1fr;
+  }
+}
   font-family:'Space Mono',monospace;
   text-shadow:0 0 15px rgba(138,43,226,0.4);
 }
@@ -533,11 +611,10 @@ footer h3 {
   <h1>⚡ ZENINTH</h1>
   <nav>
     <a href="#home">HOME</a>
-    <a href="#features">FEATURES</a>
-    <a href="#products">PRODUCTS</a>
-    <a href="#shop">SHOP</a>
-    <a href="#services">SERVICES</a>
-    <a href="#testimonials">REVIEWS</a>
+    <a href="#features">ABOUT US</a>
+    <a href="#products">GAMING LAPTOP</a>
+    <a href="#shop">GAMING PC</a>
+    <a href="#configurator">CUSTOMISE BUILD</a>
   </nav>
 </header>
 
@@ -546,8 +623,86 @@ footer h3 {
   <div>
     <h2>Build Your <span>ULTIMATE GAMING</span> MACHINE</h2>
     <p>Crafted for champions. Engineered for performance. Ready for victory.</p>
-    <button class="btn">⚙️ START BUILDING</button>
+    <a href="#configurator" class="btn">⚙️ START BUILDING</a>
     <button class="btn btn-outline">📱 VIEW CATALOG</button>
+  </div>
+</section>
+
+<!-- CONFIGURATOR SECTION -->
+<section id="configurator">
+  <h2 class="title">Build ur own Divice</h2>
+  <div class="configurator-grid">
+    <div class="card config-panel">
+      <h3>Choose your build</h3>
+      <p>Select a device type and the components you want to make it yours.</p>
+      <div class="config-field">
+        <label for="device-type">Device Type</label>
+        <select id="device-type">
+          <option value="PC">PC</option>
+          <option value="Laptop">Laptop</option>
+        </select>
+      </div>
+      <div class="config-field">
+        <label for="cpu-select">CPU</label>
+        <select id="cpu-select">
+          <option value="Intel i9-14900K">Intel i9-14900K</option>
+          <option value="AMD Ryzen 9 7950X">AMD Ryzen 9 7950X</option>
+          <option value="Intel i7-14700K">Intel i7-14700K</option>
+        </select>
+      </div>
+      <div class="config-field">
+        <label for="gpu-select">GPU</label>
+        <select id="gpu-select">
+          <option value="NVIDIA RTX 4090">NVIDIA RTX 4090</option>
+          <option value="NVIDIA RTX 4080">NVIDIA RTX 4080</option>
+          <option value="AMD Radeon RX 7900 XTX">AMD Radeon RX 7900 XTX</option>
+        </select>
+      </div>
+      <div class="config-field">
+        <label for="ram-select">RAM</label>
+        <select id="ram-select">
+          <option value="64GB DDR5">64GB DDR5</option>
+          <option value="32GB DDR5">32GB DDR5</option>
+          <option value="16GB DDR5">16GB DDR5</option>
+        </select>
+      </div>
+      <div class="config-field">
+        <label for="storage-select">Storage</label>
+        <select id="storage-select">
+          <option value="2TB NVMe SSD">2TB NVMe SSD</option>
+          <option value="1TB NVMe SSD">1TB NVMe SSD</option>
+          <option value="512GB NVMe SSD">512GB NVMe SSD</option>
+        </select>
+      </div>
+      <div class="config-field">
+        <label for="psu-select">Power Supply</label>
+        <select id="psu-select">
+          <option value="1000W Platinum">1000W Platinum</option>
+          <option value="850W Gold">850W Gold</option>
+          <option value="750W Gold">750W Gold</option>
+        </select>
+      </div>
+      <div class="config-field">
+        <label for="cooler-select">Cooling</label>
+        <select id="cooler-select">
+          <option value="AIO Liquid Cooler">AIO Liquid Cooler</option>
+          <option value="High-performance Air Cooler">High-performance Air Cooler</option>
+          <option value="Custom Loop Cooler">Custom Loop Cooler</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card stats-panel">
+      <h3>Device statistics</h3>
+      <div class="stat-item"><span>Device</span><strong id="stat-device">PC</strong></div>
+      <div class="stat-item"><span>CPU</span><strong id="stat-cpu">Intel i9-14900K</strong></div>
+      <div class="stat-item"><span>GPU</span><strong id="stat-gpu">NVIDIA RTX 4090</strong></div>
+      <div class="stat-item"><span>RAM</span><strong id="stat-ram">64GB DDR5</strong></div>
+      <div class="stat-item"><span>Storage</span><strong id="stat-storage">2TB NVMe SSD</strong></div>
+      <div class="stat-item"><span>Power Draw</span><strong id="stat-power">920W</strong></div>
+      <div class="stat-item"><span>Performance</span><strong id="stat-score">Elite</strong></div>
+      <div class="stat-item"><span>Estimated Price</span><strong id="stat-price">€3,299</strong></div>
+    </div>
   </div>
 </section>
 
@@ -719,5 +874,115 @@ footer h3 {
   <p>© 2026 ZENINTH Gaming. All rights reserved. Built with ⚡ for gamers.</p>
 </footer>
 
+<script>
+const configOptions = {
+  PC: {
+    cpu: ['Intel i9-14900K','AMD Ryzen 9 7950X','Intel i7-14700K','Intel i5-14600K','AMD Ryzen 7 7800X3D'],
+    gpu: ['NVIDIA RTX 4090','NVIDIA RTX 4080','AMD Radeon RX 7900 XTX','NVIDIA RTX 4070 Ti','AMD Radeon RX 7800 XT'],
+    ram: ['128GB DDR5','64GB DDR5','32GB DDR5','16GB DDR5'],
+    storage: ['4TB NVMe SSD','2TB NVMe SSD','1TB NVMe SSD','1TB SATA SSD','512GB NVMe SSD'],
+    psu: ['1200W Platinum','1000W Platinum','850W Gold','750W Gold'],
+    cooler: ['AIO Liquid Cooler','High-performance Air Cooler','Custom Loop Cooler','Vapor Chamber Cooler']
+  },
+  Laptop: {
+    cpu: ['Intel i9-13900HX','AMD Ryzen 9 7945HX','Intel i7-13700H','AMD Ryzen 7 7840HS','Intel i5-13500H'],
+    gpu: ['NVIDIA RTX 4090 Laptop','NVIDIA RTX 4080 Laptop','NVIDIA RTX 4070 Laptop','NVIDIA RTX 4060 Laptop'],
+    ram: ['64GB DDR5','32GB DDR5','16GB DDR5','8GB DDR5'],
+    storage: ['4TB NVMe SSD','2TB NVMe SSD','1TB NVMe SSD','1TB SSD'],
+    psu: ['280W Adapter','230W Adapter','200W Adapter','180W Adapter'],
+    cooler: ['Advanced Laptop Cooling','Dual-fan Laptop Cooling','Ultra-thin Cooling System','Liquid Vapor Cooling']
+  }
+};
+
+const powerMap = {
+  'Intel i9-14900K':250,'AMD Ryzen 9 7950X':220,'Intel i7-14700K':180,
+  'Intel i9-13900HX':150,'AMD Ryzen 9 7945HX':145,'Intel i7-13700H':120,
+  'NVIDIA RTX 4090':450,'NVIDIA RTX 4080':320,'AMD Radeon RX 7900 XTX':355,
+  'NVIDIA RTX 4090 Laptop':175,'NVIDIA RTX 4080 Laptop':150,'NVIDIA RTX 4070 Laptop':120,
+  '64GB DDR5':20,'32GB DDR5':15,'16GB DDR5':10,
+  '2TB NVMe SSD':8,'1TB NVMe SSD':7,'512GB NVMe SSD':6,'1TB SSD':7
+};
+
+const priceMap = {
+  'Intel i9-14900K':699,'AMD Ryzen 9 7950X':699,'Intel i7-14700K':399,
+  'Intel i9-13900HX':599,'AMD Ryzen 9 7945HX':649,'Intel i7-13700H':449,'AMD Ryzen 7 7840HS':429,'Intel i5-13500H':319,
+  'NVIDIA RTX 4090':1699,'NVIDIA RTX 4080':1199,'AMD Radeon RX 7900 XTX':999,'NVIDIA RTX 4070 Ti':899,'AMD Radeon RX 7800 XT':799,
+  'NVIDIA RTX 4090 Laptop':1799,'NVIDIA RTX 4080 Laptop':1499,'NVIDIA RTX 4070 Laptop':1099,'NVIDIA RTX 4060 Laptop':899,
+  '128GB DDR5':549,'64GB DDR5':299,'32GB DDR5':159,'16GB DDR5':89,'8GB DDR5':49,
+  '4TB NVMe SSD':419,'2TB NVMe SSD':219,'1TB NVMe SSD':119,'1TB SATA SSD':99,'512GB NVMe SSD':69,'1TB SSD':109,
+  '1200W Platinum':299,'1000W Platinum':249,'850W Gold':179,'750W Gold':139,
+  '280W Adapter':159,'230W Adapter':129,'200W Adapter':99,'180W Adapter':89,
+  'AIO Liquid Cooler':149,'High-performance Air Cooler':99,'Custom Loop Cooler':229,'Vapor Chamber Cooler':199,
+  'Advanced Laptop Cooling':119,'Dual-fan Laptop Cooling':89,'Ultra-thin Cooling System':129,'Liquid Vapor Cooling':149
+};
+
+const deviceType = document.getElementById('device-type');
+const cpuSelect = document.getElementById('cpu-select');
+const gpuSelect = document.getElementById('gpu-select');
+const ramSelect = document.getElementById('ram-select');
+const storageSelect = document.getElementById('storage-select');
+const psuSelect = document.getElementById('psu-select');
+const coolerSelect = document.getElementById('cooler-select');
+
+const statDevice = document.getElementById('stat-device');
+const statCpu = document.getElementById('stat-cpu');
+const statGpu = document.getElementById('stat-gpu');
+const statRam = document.getElementById('stat-ram');
+const statStorage = document.getElementById('stat-storage');
+const statPower = document.getElementById('stat-power');
+const statScore = document.getElementById('stat-score');
+const statPrice = document.getElementById('stat-price');
+
+const typeOptions = Object.keys(configOptions);
+
+typeOptions.forEach(type => {
+  const option = document.createElement('option');
+  option.value = type;
+  option.textContent = type;
+  deviceType.appendChild(option);
+});
+
+function fillOptions(type) {
+  const fields = [ ['cpu', cpuSelect], ['gpu', gpuSelect], ['ram', ramSelect], ['storage', storageSelect], ['psu', psuSelect], ['cooler', coolerSelect] ];
+  fields.forEach(([key, element]) => {
+    element.innerHTML = configOptions[type][key].map(value => `<option value="${value}">${value}</option>`).join('');
+  });
+}
+
+function updateStats() {
+  const type = deviceType.value;
+  const cpu = cpuSelect.value;
+  const gpu = gpuSelect.value;
+  const ram = ramSelect.value;
+  const storage = storageSelect.value;
+  const psu = psuSelect.value;
+  const cooler = coolerSelect.value;
+
+  const powerValue = (powerMap[cpu] || 0) + (powerMap[gpu] || 0) + (powerMap[ram] || 0) + (powerMap[storage] || 0);
+  const totalPrice = [cpu,gpu,ram,storage,psu,cooler].reduce((sum, val) => sum + (priceMap[val] || 0), 0);
+  const score = Math.min(100, Math.round(( (powerMap[cpu]||0) + (powerMap[gpu]||0) ) / 8));
+  const perfLabel = score > 90 ? 'Elite' : score > 70 ? 'High' : score > 50 ? 'Balanced' : 'Entry';
+
+  statDevice.textContent = type;
+  statCpu.textContent = cpu;
+  statGpu.textContent = gpu;
+  statRam.textContent = ram;
+  statStorage.textContent = storage;
+  statPower.textContent = `${powerValue}W`;
+  statScore.textContent = `${perfLabel}`;
+  statPrice.textContent = `€${totalPrice.toLocaleString()}`;
+}
+
+function refresh() {
+  fillOptions(deviceType.value);
+  updateStats();
+}
+
+deviceType.addEventListener('change', refresh);
+[cpuSelect, gpuSelect, ramSelect, storageSelect, psuSelect, coolerSelect].forEach(select => select.addEventListener('change', updateStats));
+
+deviceType.value = 'PC';
+refresh();
+</script>
 </body>
 </html>
