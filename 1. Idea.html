@@ -918,51 +918,27 @@ footer p {
       </div>
       <div class="config-field">
         <label for="cpu-select">CPU</label>
-        <select id="cpu-select">
-          <option value="Intel i9-14900K">Intel i9-14900K</option>
-          <option value="AMD Ryzen 9 7950X">AMD Ryzen 9 7950X</option>
-          <option value="Intel i7-14700K">Intel i7-14700K</option>
-        </select>
+        <select id="cpu-select"></select>
       </div>
       <div class="config-field">
         <label for="gpu-select">GPU</label>
-        <select id="gpu-select">
-          <option value="NVIDIA RTX 4090">NVIDIA RTX 4090</option>
-          <option value="NVIDIA RTX 4080">NVIDIA RTX 4080</option>
-          <option value="AMD Radeon RX 7900 XTX">AMD Radeon RX 7900 XTX</option>
-        </select>
+        <select id="gpu-select"></select>
       </div>
       <div class="config-field">
         <label for="ram-select">RAM</label>
-        <select id="ram-select">
-          <option value="64GB DDR5">64GB DDR5</option>
-          <option value="32GB DDR5">32GB DDR5</option>
-          <option value="16GB DDR5">16GB DDR5</option>
-        </select>
+        <select id="ram-select"></select>
       </div>
       <div class="config-field">
         <label for="storage-select">Storage</label>
-        <select id="storage-select">
-          <option value="2TB NVMe SSD">2TB NVMe SSD</option>
-          <option value="1TB NVMe SSD">1TB NVMe SSD</option>
-          <option value="512GB NVMe SSD">512GB NVMe SSD</option>
-        </select>
+        <select id="storage-select"></select>
       </div>
       <div class="config-field">
         <label for="psu-select">Power Supply</label>
-        <select id="psu-select">
-          <option value="1000W Platinum">1000W Platinum</option>
-          <option value="850W Gold">850W Gold</option>
-          <option value="750W Gold">750W Gold</option>
-        </select>
+        <select id="psu-select"></select>
       </div>
       <div class="config-field">
         <label for="cooler-select">Cooling</label>
-        <select id="cooler-select">
-          <option value="AIO Liquid Cooler">AIO Liquid Cooler</option>
-          <option value="High-performance Air Cooler">High-performance Air Cooler</option>
-          <option value="Custom Loop Cooler">Custom Loop Cooler</option>
-        </select>
+        <select id="cooler-select"></select>
       </div>
     </div>
 
@@ -1169,12 +1145,12 @@ const configOptions = {
 };
 
 const powerMap = {
-  'Intel i9-14900K':250,'AMD Ryzen 9 7950X':220,'Intel i7-14700K':180,
-  'Intel i9-13900HX':150,'AMD Ryzen 9 7945HX':145,'Intel i7-13700H':120,
-  'NVIDIA RTX 4090':450,'NVIDIA RTX 4080':320,'AMD Radeon RX 7900 XTX':355,
-  'NVIDIA RTX 4090 Laptop':175,'NVIDIA RTX 4080 Laptop':150,'NVIDIA RTX 4070 Laptop':120,
-  '64GB DDR5':20,'32GB DDR5':15,'16GB DDR5':10,
-  '2TB NVMe SSD':8,'1TB NVMe SSD':7,'512GB NVMe SSD':6,'1TB SSD':7
+  'Intel i9-14900K':250,'AMD Ryzen 9 7950X':220,'Intel i7-14700K':180,'Intel i5-14600K':125,'AMD Ryzen 7 7800X3D':125,
+  'Intel i9-13900HX':150,'AMD Ryzen 9 7945HX':145,'Intel i7-13700H':120,'AMD Ryzen 7 7840HS':95,'Intel i5-13500H':95,
+  'NVIDIA RTX 4090':450,'NVIDIA RTX 4080':320,'AMD Radeon RX 7900 XTX':355,'NVIDIA RTX 4070 Ti':285,'AMD Radeon RX 7800 XT':263,
+  'NVIDIA RTX 4090 Laptop':175,'NVIDIA RTX 4080 Laptop':150,'NVIDIA RTX 4070 Laptop':120,'NVIDIA RTX 4060 Laptop':115,
+  '128GB DDR5':25,'64GB DDR5':20,'32GB DDR5':15,'16GB DDR5':10,'8GB DDR5':8,
+  '4TB NVMe SSD':10,'2TB NVMe SSD':8,'1TB NVMe SSD':7,'1TB SATA SSD':7,'512GB NVMe SSD':6,'1TB SSD':7
 };
 
 const priceMap = {
